@@ -5,11 +5,12 @@ Author: OS Templates
 Author URI: https://www.os-templates.com/
 Licence: <a href="https://www.os-templates.com/template-terms">Website Template Licence</a>
 */
+body { background-image: url(../images/fondo.jpg); background-size: 100%}
 
 #about-us{display:block; width:100%; line-height:1.6em;}
 
 #about-us #about-intro{margin-bottom:0;}
-#about-us #about-intro .panorama{margin-bottom:20px;}
+#about-us #about-intro .panorama{margin-bottom:20px; margin-left:60px;}
 #about-us #about-intro .panorama .imgholder{}
 #about-us #about-intro blockquote{position:relative; margin:0; padding:0;}
 #about-us #about-intro blockquote p{margin:0; padding:0 0 0 60px; font-size:16px; font-style:italic; line-height:1.6em;}
