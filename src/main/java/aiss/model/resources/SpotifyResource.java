@@ -1,5 +1,7 @@
 package aiss.model.resources;
 
 public class SpotifyResource {
-	null;
+	public void test() {
+		return;
+	}
 }
