@@ -1,0 +1,17 @@
+{	
+    "Youtube": { 
+		
+        "tokenUrl": "",
+        "clientId": "1059638856570-vq9av156ftdfntmde9q1mhpkk89be0t9.apps.googleusercontent.com",
+        "clientSecret": "o4o6ps2V4KFhcDah0o-Olnxz",
+        "authorizationFormUrl": "",
+        "scopes": [""]
+    },
+    "Spotify": {
+        "tokenUrl": "https://accounts.spotify.com/api/token",
+        "clientId": "",
+        "clientSecret": "",
+        "authorizationFormUrl": "https://accounts.spotify.com/authorize",
+        "scopes": [""]
+    }
+}		
