@@ -31,11 +31,17 @@ public class VideoMusicController extends HttpServlet{
 		VideoMusicSearch youtubeResults = youtube.getVideo(query);
 		
 		if(youtubeResults != null) {
-			rd = request.getRequestDispatcher("/busquedasYT.jsp");
+			rd = request.getRequestDispatcher("/muestraYouTube.jsp");
 			request.setAttribute("videos", youtubeResults.getItems());
 		} else {
+			log.log(Level.SEVERE, "VideoMusic object: " + youtubeResults);
 			rd = request.getRequestDispatcher("/error.jsp");
 		}
-	
+		rd.forward(request, response);
 	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
 }
