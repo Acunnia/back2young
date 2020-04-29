@@ -16,6 +16,17 @@
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
 	
+	<servlet>
+	    <description></description>
+	    <display-name>VideoMusicController</display-name>
+	    <servlet-name>VideoMusicController</servlet-name>
+    <servlet-class>aiss.controller.VideoMusicController</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+	    <servlet-name>VideoMusicController</servlet-name>
+	    <url-pattern>/VideoMusicController</url-pattern>
+  	</servlet-mapping>
+	
 	<!--  OAUTH SERVLETS 
   
   	For each OAuth 2.0 service, you need to create two servlets: one for the initiation 
