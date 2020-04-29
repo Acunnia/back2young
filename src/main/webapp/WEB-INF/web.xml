@@ -17,10 +17,9 @@
 	</welcome-file-list>
 	
 	<servlet>
-	    <description></description>
 	    <display-name>VideoMusicController</display-name>
 	    <servlet-name>VideoMusicController</servlet-name>
-    <servlet-class>aiss.controller.VideoMusicController</servlet-class>
+    	<servlet-class>aiss.controller.VideoMusicController</servlet-class>
   	</servlet>
   	<servlet-mapping>
 	    <servlet-name>VideoMusicController</servlet-name>
