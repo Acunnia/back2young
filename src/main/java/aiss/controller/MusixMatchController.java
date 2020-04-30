@@ -5,8 +5,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import aiss.model.musixmatch.Lyrics;
+import aiss.model.musixmatch.Musixmatch;
 import aiss.model.resources.MusixMatchResource;
 
 import java.io.IOException;
@@ -35,11 +34,11 @@ public class MusixMatchController extends HttpServlet{
 		
 		log.log(Level.FINE, "Searching lyrics results in MusixMatch of song" + queryTrack + "from artist" + queryArtist);
 		MusixMatchResource musixmatch = new MusixMatchResource();
-		Lyrics musixMatchLyrics = musixmatch.getLyrics(queryArtist, queryTrack);
+		Musixmatch musixMatchLyrics = musixmatch.getLyrics(queryArtist, queryTrack);
 		
 		if(musixMatchLyrics != null) {
 			rd = request.getRequestDispatcher("/succes2.jsp");
-			request.setAttribute("lyrics", musixMatchLyrics.getLyricsBody());
+			request.setAttribute("lyrics", musixMatchLyrics.getMessage().getBody().getLyrics().getLyricsBody());
 		} else {
 			log.log(Level.SEVERE, "MusixMatch lyrics: " + musixMatchLyrics);
 			rd = request.getRequestDispatcher("/error.jsp");
