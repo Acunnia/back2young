@@ -17,7 +17,7 @@ public class MusixMatchTest {
 		MusixMatchResource musixmatch = new MusixMatchResource();
 		Lyrics musixmatchResults = musixmatch.getLyrics(artista, cancion);
 		
-		assertNotNull("The search of lyrics is not null", musixmatchResults.getLyrics());
+		assertNotNull("The search of track is not null", musixmatchResults.getLyrics());
 		
 		
 		System.out.println("The search of songs's lyric " + cancion + " from artist " + artista + " returned: \n\n" + musixmatchResults.getLyrics());

@@ -3,17 +3,19 @@ package aiss.model.musixmatch;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -43,7 +45,7 @@ public class Lyrics {
     private String updatedTime;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-
+    
     private static final Logger log = Logger.getLogger(Lyrics.class.getName());
 	private static final Pattern p = Pattern.compile("\"lyrics_body.+?Commercial use");
 	private String lyrics;
@@ -123,7 +125,7 @@ public class Lyrics {
 	public void setLyrics(String lyrics) {
 		this.lyrics = lyrics;
 	}
-    
+
     @JsonProperty("lyrics_id")
     public Integer getLyricsId() {
         return lyricsId;

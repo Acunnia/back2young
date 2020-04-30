@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import aiss.model.musixmatch.Lyrics;
-import aiss.model.musixmatch.Musixmatch;
 import aiss.model.resources.MusixMatchResource;
 
 import java.io.IOException;
@@ -39,7 +38,7 @@ public class MusixMatchController extends HttpServlet{
 		Lyrics musixMatchLyrics = musixmatch.getLyrics(queryArtist, queryTrack);
 		
 		if(musixMatchLyrics != null) {
-			rd = request.getRequestDispatcher("/succes2.jsp");
+			rd = request.getRequestDispatcher("/pruebaMusixMatch.jsp");
 			request.setAttribute("lyrics", musixMatchLyrics.getLyrics());
 		} else {
 			log.log(Level.SEVERE, "MusixMatch lyrics: " + musixMatchLyrics);

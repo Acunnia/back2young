@@ -8,5 +8,17 @@
 </head>
 <body id=pruebaMusixMatch>
 
+<h1>Realice la búsqueda de letra de cancion introduciento artista y nombre de la canción </h1>
+
+	<div id="LyricsId">
+		<form id="searchForm" action="MusixMatchController" method="post">
+			<p>Introduzca artista</p>
+			<input type="text" name="queryArtist" required/>
+			<p1>Introduzca canción</p1>
+			<input type="text" name="queryTrack" required/>
+			<input type="submit" name="searchBtn" title="BuscarMusixMatch" value="Buscar">
+		</form>
+	</div>
+
 </body>
 </html>

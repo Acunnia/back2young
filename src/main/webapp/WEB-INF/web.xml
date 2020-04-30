@@ -16,6 +16,8 @@
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
 	
+	<!-- Youtube -->
+	
 	<servlet>
 	    <display-name>VideoMusicController</display-name>
 	    <servlet-name>VideoMusicController</servlet-name>
@@ -24,6 +26,18 @@
   	<servlet-mapping>
 	    <servlet-name>VideoMusicController</servlet-name>
 	    <url-pattern>/VideoMusicController</url-pattern>
+  	</servlet-mapping>
+  	
+  	<!-- MusixMatch -->
+  	
+  	<servlet>
+	    <display-name>MusixMatchController</display-name>
+	    <servlet-name>MusixMatchController</servlet-name>
+    	<servlet-class>aiss.controller.MusixMatchController</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+	    <servlet-name>MusixMatchController</servlet-name>
+	    <url-pattern>/MusixMatchController</url-pattern>
   	</servlet-mapping>
 	
 	<!--  OAUTH SERVLETS 
