@@ -5,7 +5,10 @@ Author: OS Templates
 Author URI: https://www.os-templates.com/
 Licence: <a href="https://www.os-templates.com/template-terms">Website Template Licence</a>
 */
-body { background-image: url(../images/fondo.jpg); background-size: 100%}
+#portada { background-image: url(../images/fondo.jpg); background-size: 100%}
+#pruebaYoutube { background-image: url(../images/fondoYoutube.jpg); background-size: 100%}
+#pruebaMusixMatch { background-image: url(../images/fondoMusixmatch.jpg); background-size: 100%}
+#pruebaSpotify { background-image: url(../images/fondoSpotify.jpg); background-size: 100%}
 
 #about-us{display:block; width:100%; line-height:1.6em;}
 
