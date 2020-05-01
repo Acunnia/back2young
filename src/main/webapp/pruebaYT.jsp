@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h1>API YouTube</h1>>
+<h1>API YouTube</h1>
 
 <iframe id="player" type="text/html" width="640" height="360"
   src="http://www.youtube.com/embed/${requestScope.videoID}?enablejsapi=1"
