@@ -8,7 +8,7 @@
 </head>
 <body>
 
- <iframe src="https://open.spotify.com/embed/album/${requestScope.tracks}" width="1000" height="600" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+ <iframe src="https://open.spotify.com/embed/track/${requestScope.tracks}" width="1000" height="600" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
 </body>
 </html>
