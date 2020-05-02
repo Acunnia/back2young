@@ -92,7 +92,7 @@
 		</init-param>
 		<init-param>
 			<param-name>onSuccess</param-name>
-			<param-value>redirect:/pruebaSpotify.html</param-value>
+			<param-value>redirect:/SpotifyController</param-value>
 		</init-param>
 	</servlet>
 	<servlet-mapping>

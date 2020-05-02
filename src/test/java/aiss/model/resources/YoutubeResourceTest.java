@@ -12,7 +12,7 @@ public class YoutubeResourceTest {
 
 	@Test
 	public void getVideoTest() throws UnsupportedEncodingException {
-		String titulo = "BlackPink - Kill This Love";
+		String titulo = "BlackPink  Kill This Love";
 		YoutubeResource youtube = new YoutubeResource();
 		VideoMusicSearch youtubeResults = youtube.getVideo(titulo);
 		
