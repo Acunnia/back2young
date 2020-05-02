@@ -5,9 +5,10 @@
  <html>
  <head>
  	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+ 	<link rel="stylesheet" href="styles/buscadores.css">
  	<title>Busqueda Youtube</title>
  </head>
- <body>
+ <body id="youtube">
  	<fieldset id="videos">
  		<legend>Youtube search for <c:out value="${param.searchQuery}"/></legend>
  		<c:forEach items="${requestScope.videos}" var="video">

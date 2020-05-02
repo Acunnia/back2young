@@ -3,17 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-p{
-	width:10%;
-}
-</style>
+<link rel="stylesheet" href="styles/buscadorMusixMatch.css">
 <meta charset="ISO-8859-1">
 <title>Prueba API MusixMatch</title>
 </head>
-<body>
+<body id="musixmatch">
 
-<h1>Api MusixMatch</h1>
+
 
 <p>${requestScope.lyrics}</p>
 

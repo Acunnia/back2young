@@ -2,20 +2,28 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" href="styles/styles.css">
+<link rel="stylesheet" href="styles/buscadoreSpotify.css">
 <link rel="stylesheet" href="styles/framework.css">
 <title>Prueba API Spotify</title>
 </head>
-<body id=pruebaSpotify>
-
-<h1>Realice su búsqueda</h1>
-
-	<div id="tracks">
+<body id="spotify">
+<h1></h1>
+	<div id="cover">
 		<form id="searchForm" action="SpotifyController" method="post">
-			<input type="text" name="searchQuery" required/> 
-			<input type="submit" name="searchBtn" title="BuscarSP" value="Buscar">
+			<div class="tb">
+				<div class="td">
+					<input type="text" name="searchQuery" required />
+				</div>
+				<div class="td" id="s-cover">
+					<button type="submit">
+						<div id="s-circle"></div>
+						<span></span>
+					</button>
+				</div>
+			</div>
 		</form>
 	</div>
+
 
 </body>
 </html>
