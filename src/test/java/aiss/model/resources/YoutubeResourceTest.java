@@ -21,4 +21,13 @@ public class YoutubeResourceTest {
 		assertFalse("The number of videos is zero", youtubeResults.getItems().size()==0);
 	}
 	
+	@Test (expected = NullPointerException.class)
+	public void getNullVideo() throws UnsupportedEncodingException {
+		String titulo = null;
+		YoutubeResource youtube = new YoutubeResource();
+		VideoMusicSearch youtubeResults = youtube.getVideo(titulo);
+		
+		assertNull("The search returned null", youtubeResults);
+	}
+	
 }
