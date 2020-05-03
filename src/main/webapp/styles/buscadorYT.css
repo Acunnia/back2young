@@ -19,7 +19,7 @@
 
 input, button
 {
-    color: #CACACA;
+    color:#BE1F1F;
     font-family: Nunito;
     padding: 0;
     margin: 0;
@@ -58,7 +58,7 @@ input[type="text"]
 
 input[type="text"]::placeholder
 {
-    color: #AEACAC;
+    color: #BE1F1F;
 }
 
 #s-cover
