@@ -44,7 +44,7 @@ public class SpotifyController extends HttpServlet {
 
 			if (spotifyResults != null) {
 				rd = request.getRequestDispatcher("/pruebaSpotify.jsp");
-				request.setAttribute("tracks", spotifyResults.getTracks().getItems().get(0).getId());
+				request.setAttribute("tracks", spotifyResults.getTracks().getItems().get(2).getId());
 			} else {
 				log.log(Level.SEVERE, "Spotify object: " + spotifyResults);
 				rd = request.getRequestDispatcher("/error.jsp");

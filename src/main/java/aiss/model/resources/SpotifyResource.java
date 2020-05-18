@@ -18,8 +18,9 @@ import aiss.model.spotify.SearchTracks;
 
 public class SpotifyResource {
 
-	private String userPlaylistsUri = "https://api.spotify.com/v1/me/playlists";
-	private String trackSearchUri = "https://api.spotify.com/v1/search?type=track&q=";
+	//private String trackSearchUri = "https://api.spotify.com/v1/search?type=track&q=";
+	private String trackSearchUri1 = "https://api.spotify.com/v1/search?q=year:";
+	private String trackSearchUri2 = "&type=track&popularity=100&limit=3";
 	private String access_Token = null;
 	private static final Logger log=Logger.getLogger(SpotifyResource.class.getName());
 	
@@ -32,7 +33,7 @@ public class SpotifyResource {
 		String json = null;
 		ClientResource cr = null;
 		try{
-			cr = new ClientResource(trackSearchUri + query + "&access_token=" + access_Token);
+			cr = new ClientResource(trackSearchUri1 + query + trackSearchUri2 + "&access_token=" + access_Token);
 			json = cr.get(String.class);
 			log.log(Level.FINE,"Búsqueda realizada correctamente."+json);
 			Map<String, Object> reqAttribs = cr.getRequestAttributes(); 
