@@ -2,7 +2,6 @@ package aiss.controller;
 
 
 import java.io.IOException;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -13,8 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import aiss.model.resources.SpotifyResource;
-import aiss.model.spotify.Item;
+import aiss.model.resources.YoutubeResource;
 import aiss.model.spotify.SearchTracks;
+import aiss.model.youtube.VideoMusicSearch;
 
 public class Back2youngController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -34,21 +34,24 @@ public class Back2youngController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String query = request.getParameter("searchQuery");
+		String songName = request.getParameter("songName");
+		String query = request.getParameter("query");
 		String accessToken = (String) request.getSession().getAttribute("Spotify-token");
 		RequestDispatcher rd = null;
 
 		if (accessToken != null && !"".equals(accessToken)) {
 
 			// Search for tracks in Spotify
-			log.log(Level.FINE, "Searching for Spotify results of " + query);
+			log.log(Level.FINE, "Searching for Spotify results of " + songName);
 			SpotifyResource spotify = new SpotifyResource(accessToken);
-			SearchTracks spotifyResults = spotify.getTrackSearch(query);
+			SearchTracks spotifyResults = spotify.getTopSearch(songName);
+			SearchTracks spotifyResultsName = spotify.getTrackSearchName(query);
 
 			if (spotifyResults != null) {
-				rd = request.getRequestDispatcher("/pruebaSpotify.jsp");
-				request.setAttribute("tracks",spotifyResults.getTracks().getItems());
-				request.setAttribute("video", spotifyResults.getTracks().getItems().get(0).getName());
+				rd = request.getRequestDispatcher("/youtubeSpotify.jsp");
+				YoutubeResource youtube = new YoutubeResource();
+				VideoMusicSearch videoResults = youtube.getVideo(songName);
+				request.setAttribute("video", videoResults.getItems().get(0).getId().getVideoId());
 			} else {
 				log.log(Level.SEVERE, "Spotify object: " + spotifyResults);
 				rd = request.getRequestDispatcher("/error.jsp");

@@ -51,6 +51,17 @@
 		<servlet-name>SpotifyController</servlet-name>
 		<url-pattern>/SpotifyController</url-pattern>
 	</servlet-mapping>
+	
+	<!-- Back2young -->
+
+	<servlet>
+		<servlet-name>Back2youngController</servlet-name>
+		<servlet-class>aiss.controller.Back2youngController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Back2youngController</servlet-name>
+		<url-pattern>/Back2youngController</url-pattern>
+	</servlet-mapping>
 
 	<!-- OAUTH SERVLETS For each OAuth 2.0 service, you need to create two servlets: 
 		one for the initiation and another for the callback. After sucess the token 

@@ -40,7 +40,7 @@ public class SpotifyController extends HttpServlet {
 			// Search for tracks in Spotify
 			log.log(Level.FINE, "Searching for Spotify results of " + query);
 			SpotifyResource spotify = new SpotifyResource(accessToken);
-			SearchTracks spotifyResults = spotify.getTrackSearch(query);
+			SearchTracks spotifyResults = spotify.getTopSearch(query);
 
 			if (spotifyResults != null) {
 				rd = request.getRequestDispatcher("/pruebaSpotify.jsp");
