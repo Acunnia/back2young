@@ -20,7 +20,7 @@ public class SpotifyResource {
 
 	//private String trackSearchUri = "https://api.spotify.com/v1/search?type=track&q=";
 	private String trackSearchUri1 = "https://api.spotify.com/v1/search?q=year:";
-	private String trackSearchUri2 = "&type=track&popularity=100&limit=3";
+	private String trackSearchUri2 = "&type=track&popularity=100&limit=5";
 	private String access_Token = null;
 	private static final Logger log=Logger.getLogger(SpotifyResource.class.getName());
 	

@@ -9,18 +9,20 @@
 </head>
 <body id="spotify">
 
- <!-- <iframe src="https://open.spotify.com/embed/track/${requestScope.tracks}" width="1000" height="600" 
-frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>  -->
+<iframe src="https://open.spotify.com/embed/track/${requestScope.tracks}" width="500" height="300" 
+frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
-<fieldset id="trakcs">
- 		<legend>Spotify search for <c:out value="${param.searchQuery}"/></legend>
- 		<c:forEach items="${requestScope.tracks}" var="track">
-			<iframe src="https://open.spotify.com/embed/track/${requestScope.tracks}" width="1000" height="600" frameborder="0" 
-			allowtransparency="true" allow="encrypted-media"></iframe> 
-	</c:forEach>
- 	</fieldset>
--->
+<iframe src="https://open.spotify.com/embed/track/${requestScope.tracks1}" width="500" height="300" 
+frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
+<iframe src="https://open.spotify.com/embed/track/${requestScope.tracks2}" width="500" height="300" 
+frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+<iframe src="https://open.spotify.com/embed/track/${requestScope.tracks3}" width="500" height="300" 
+frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+<iframe src="https://open.spotify.com/embed/track/${requestScope.tracks4}" width="500" height="300" 
+frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
 </body>
 </html>
