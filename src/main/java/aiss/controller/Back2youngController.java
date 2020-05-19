@@ -2,6 +2,7 @@ package aiss.controller;
 
 
 import java.io.IOException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import aiss.model.resources.SpotifyResource;
+import aiss.model.spotify.Item;
 import aiss.model.spotify.SearchTracks;
 
 public class Back2youngController extends HttpServlet {
@@ -45,11 +47,7 @@ public class Back2youngController extends HttpServlet {
 
 			if (spotifyResults != null) {
 				rd = request.getRequestDispatcher("/pruebaSpotify.jsp");
-				request.setAttribute("tracks", spotifyResults.getTracks().getItems().get(0).getId());
-				request.setAttribute("tracks1", spotifyResults.getTracks().getItems().get(1).getId());
-				request.setAttribute("tracks2", spotifyResults.getTracks().getItems().get(2).getId());
-				request.setAttribute("tracks3", spotifyResults.getTracks().getItems().get(3).getId());
-				request.setAttribute("tracks4", spotifyResults.getTracks().getItems().get(4).getId());
+				request.setAttribute("tracks",spotifyResults.getTracks().getItems());
 				request.setAttribute("video", spotifyResults.getTracks().getItems().get(0).getName());
 			} else {
 				log.log(Level.SEVERE, "Spotify object: " + spotifyResults);
