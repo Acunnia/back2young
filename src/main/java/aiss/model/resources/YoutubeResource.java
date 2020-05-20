@@ -11,7 +11,8 @@ import aiss.model.youtube.VideoMusicSearch;
 public class YoutubeResource {
 	private String canionSearchUri = "https://www.googleapis.com/youtube/v3/search?type=video&videoCategory.id&maxResults=1"
 			+ "&order=viewCount&part=snippet&q=";
-	private static final String _YT_API_KEY = "AIzaSyDFjJYjnyYb08sh5XHkvoNSpruKJBSIVrs";
+	//private static final String _YT_API_KEY = "AIzaSyDFjJYjnyYb08sh5XHkvoNSpruKJBSIVrs";
+	private static final String _YT_API_KEY = "AIzaSyAMowq_stz6DILTk0P0pFNhvsK7JfdKuVk";
 	
 	public VideoMusicSearch getVideo(String query) throws UnsupportedEncodingException {
 		String queryFormatted = URLEncoder.encode(query, "UTF-8");

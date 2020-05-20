@@ -35,7 +35,7 @@ public class MusixMatchController extends HttpServlet{
 		
 		log.log(Level.FINE, "Searching lyrics results in MusixMatch of song" + queryTrack + "from artist" + queryArtist);
 		MusixMatchResource musixmatch = new MusixMatchResource();
-		Lyrics musixMatchLyrics = musixmatch.getLyrics(queryArtist, queryTrack);
+		Lyrics musixMatchLyrics = musixmatch.getLyricsResource(queryArtist, queryTrack);
 		
 		if(musixMatchLyrics != null) {
 			rd = request.getRequestDispatcher("/pruebaMusixMatch.jsp");

@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import aiss.model.musixmatch.Lyrics;
+import aiss.model.resources.MusixMatchResource;
 import aiss.model.resources.SpotifyResource;
 import aiss.model.resources.YoutubeResource;
 import aiss.model.spotify.SearchTracks;
@@ -35,25 +37,33 @@ public class Back2youngController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String songName = request.getParameter("songName");
-		String query = request.getParameter("query");
 		String accessToken = (String) request.getSession().getAttribute("Spotify-token");
 		RequestDispatcher rd = null;
 
 		if (accessToken != null && !"".equals(accessToken)) {
 
 			// Search for tracks in Spotify
-			log.log(Level.FINE, "Searching for Spotify results of " + songName);
+			log.log(Level.FINE, "Searching results of " + songName);
 			SpotifyResource spotify = new SpotifyResource(accessToken);
-			SearchTracks spotifyResults = spotify.getTopSearch(songName);
-			SearchTracks spotifyResultsName = spotify.getTrackSearchName(query);
+			SearchTracks spotifyResultsName = spotify.getTrackSearchName(songName);
 
-			if (spotifyResults != null) {
+			if (spotifyResultsName != null) {
 				rd = request.getRequestDispatcher("/youtubeSpotify.jsp");
+				request.setAttribute("trackSpotifyId", spotifyResultsName.getTracks().getItems().get(0).getId());
+				
 				YoutubeResource youtube = new YoutubeResource();
-				VideoMusicSearch videoResults = youtube.getVideo(songName);
-				request.setAttribute("video", videoResults.getItems().get(0).getId().getVideoId());
+				VideoMusicSearch videoResults = youtube.getVideo(spotifyResultsName.getTracks().getItems().get(0).getName() + 
+						spotifyResultsName.getTracks().getItems().get(0).getArtists().get(0).getName());
+				request.setAttribute("videoSong", videoResults.getItems().get(0).getId().getVideoId());
+				
+				MusixMatchResource musixmatch = new MusixMatchResource();
+				Lyrics lyrics = musixmatch.getLyricsResource(spotifyResultsName.getTracks().getItems().get(0).getName(), 
+						spotifyResultsName.getTracks().getItems().get(0).getArtists().get(0).getName());
+				request.setAttribute("lyricsSong", lyrics.getLyrics());
+				
+				
 			} else {
-				log.log(Level.SEVERE, "Spotify object: " + spotifyResults);
+				log.log(Level.SEVERE, "Spotify object: " + spotifyResultsName);
 				rd = request.getRequestDispatcher("/error.jsp");
 			}
 

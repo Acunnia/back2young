@@ -16,7 +16,7 @@ public class MusixMatchResource {
 	private static final Logger log = Logger.getLogger(MusixMatchResource.class.getName());
 	private static final String key = "b1e4daea5217abcdd3ba8a23ec24b16d";
 	
-	public Lyrics getLyrics(String queryArtist, String queryTrack) throws UnsupportedEncodingException{
+	public Lyrics getLyricsResource(String queryArtist, String queryTrack) throws UnsupportedEncodingException{
 		Lyrics letra = null;
 		ClientResource cr = null;
 		try {

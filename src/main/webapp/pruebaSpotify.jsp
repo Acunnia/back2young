@@ -21,7 +21,7 @@
     			frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
     		</td>
     		<td>
-				<form action="Back2YoungController" method="post">
+				<form action="Back2youngController" method="post">
 					<input type="hidden" name="songName" value="${track.name}"/>
 					<input type="hidden" name="artistName" value="<c:out value="${track.artists[0].name}"/>"/>
 					<button type="submit">${track.name}</button>

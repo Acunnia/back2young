@@ -18,7 +18,7 @@ public class MusixMatchTest {
         String artista = "AC/DC";
         String cancion = "Thunderstruck";
         MusixMatchResource musixmatch = new MusixMatchResource();
-        Lyrics musixmatchResults = musixmatch.getLyrics(artista, cancion);
+        Lyrics musixmatchResults = musixmatch.getLyricsResource(artista, cancion);
 
         assertNotNull("The search of track is not null", musixmatchResults.getLyrics());
 
@@ -29,7 +29,7 @@ public class MusixMatchTest {
         String artista = null;
         String cancion = null;
         MusixMatchResource musixmatch = new MusixMatchResource();
-        Lyrics musixmatchResults = musixmatch.getLyrics(artista, cancion);
+        Lyrics musixmatchResults = musixmatch.getLyricsResource(artista, cancion);
 
         assertNull("The search of track is null", musixmatchResults.getLyrics());
 
