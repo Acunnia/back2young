@@ -54,4 +54,9 @@ public class Agenda {
 		}
 		this.lContactos.add(c);
 	}
+
+	public void deleteContacto(Contacto c) {
+		lContactos.remove(c);
+	}
+
 }

@@ -125,18 +125,11 @@ public class MapAgendaRepository {
 	/* Eliminar elementos */
 	
 	public void deleteContacto(String idContacto) {
+		Contacto c = getContacto(idContacto);
 		contactoMap.remove(idContacto);
 		for (Map.Entry<String, Agenda> entry : agendaMap.entrySet()) {
 			String id = entry.getKey();
-			Agenda a = entry.getValue();
-			List<Contacto> laux = a.getlContactos();
-			for (int i = 0; i < laux.size(); i++) {
-				if (laux.get(i).getId() == idContacto) {
-					laux.remove(i);
-					a.setlContactos(laux);
-				}
-			}
-			agendaMap.put(id, a);
+			getAgenda(id).getlContactos().remove(c);
 		}
 	}
 	
@@ -145,15 +138,7 @@ public class MapAgendaRepository {
 	}
 
 	public void deleteContacto(String idContacto, String idAgenda) {
-		Agenda a = getAgenda(idAgenda);
-		List<Contacto> laux = a.getlContactos();
-		List<Contacto> lnew = new ArrayList<Contacto>();
-		for (int i = 0; i < laux.size(); i++) {
-			if (laux.get(i).getId() != idContacto) {
-				lnew.add(laux.get(i));
-			}
-		}
-		agendaMap.get(idAgenda).setlContactos(lnew);
+		getAgenda(idAgenda).getlContactos().remove(getContacto(idContacto));
 		
 	}
 	
