@@ -1,6 +1,4 @@
-/*Para poder subirlo 4 intento*/
-@import url(../fonts/GothamBook.css);
-@import url(../fonts/GothamBold.css);
+/*******************BARRA NAVEGACIÓN*********************/
 *{
 	margin: 0;
 	padding: 0;
@@ -9,7 +7,7 @@
 body{
 	background: #319B8F;
 }
-h1, h2, h3, h4, h5, h6 {
+h1{
     font-family: 'arial';
     font-weight: bold;
     letter-spacing: 1px;
@@ -68,15 +66,7 @@ header{
     text-transform: uppercase;
     margin-left: 30px;
 }
-.photouser {
-    margin-left: 30px;
-    width: 25px;
-    height: 25px;
-}
-.close{
-	width: 25px;
-    height: 25px;
-}
+
 .optionsBar a {
     display: -webkit-flex;
     display: -moz-flex;
@@ -135,6 +125,11 @@ nav li ul a{
 	padding: 10px 30px;
 	border-right: initial;
 }
+nav li:hover{
+	/*background: #2c9595;*/
+	background: #319B8F;
+}
+	
 nav li ul a:hover{
 	/*background: #2c9595;*/
 	background: #319B8F;
@@ -146,8 +141,201 @@ nav li ul li:last-child{
 #container{
 	padding: 90px 15px 15px;
 }
-/*****************************************************************/
-.p{color: #FFF; margin:0; padding:0 0 0 60px; font-size:16px; font-style:arial; line-height:1.6em; font-weight: 900;}
+
+
+/************************ÍNDICE****************************************/
+#texto p{color: #FFF; margin:0; padding:100px 0 0 60px; font-size:16px; font-style:arial; line-height:1.6em; font-weight: 900;}
+#logo{position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;}
+  
+ @keyframes example {
+  0%   {left:0px; top:0px;}
+  25%  {left:75%; top:0px;}
+  50%  {left:0px; top:0px;}
+  75%  {left:75%; top:0px;}
+  100% {left:0px; top:0px;}
+}
+
+
+/**************************ABOUT US***********************************/
+#about-us #team{margin-bottom:0;}
+#about-us #team ul{margin:0; padding:25px 0 0 0; list-style:none;}
+#about-us #team ul li{display:inline-block; float:left; width:250px; margin:30px 0 0 20px; padding:0; text-align:center;}
+#about-us #team ul li:first-child,
+#about-us #team ul > li:first-child + li + li,
+#about-us #team ul > li:first-child + li + li + li + li{margin-left:0;}
+#about-us #team ul > li:first-child, #about-us #team ul > li:first-child + li{margin-top:0;}
+#about-us #team ul li figure{}
+#about-us #team ul li figure img{padding:4px; border:1px solid #FFF;}
+#about-us #team ul li figcaption{}
+#about-us #team ul li figcaption p{margin:5px 0 0 0; padding:0;}
+#about-us #team ul li figcaption p:first-child{}
+#about-us #team ul li figure figcaption .team_name{width:250px;}
+#about-us #team ul li figure figcaption .team_title{margin:0; font-size:11px; line-height:normal;}
+#about-us #team{margin-top:25px; color: #FFF; font-size:16px; font-style:arial; line-height:1.6em; font-weight: 900;}
+
+
+/*************************BUSCADOR**********************************************/
+
+
+.tb
+{
+    display: table;
+    width: 100%;
+}
+
+.td
+{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+input, button
+{
+    color: #0D6D2F;
+    font-family: arial;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: transparent;
+}
+
+#cover
+{
+	position:absolute;
+    top:325;
+    left: 0;
+    right: 0;
+    width: 530px;
+    height: 80px;
+    padding: 35px;
+    margin: -83px auto 0 auto;
+    background-color: #18DF5E;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px #0D6D2F, 0 0 0 20px #0D6D2F;
+    transform: scale(0.6);
+}
+
+form
+{
+    height: 96px;
+}
+
+input[type="text"]
+{
+    width: 100%;
+    height: 96px;
+    font-size: 40px;
+    line-height: 1;
+}
+
+input[type="text"]::placeholder
+{
+    color: #18DF5E;
+}
+
+#s-cover
+{
+    width: 1px;
+    padding-left: 35px;
+}
+
+button
+{
+    position: relative;
+    display: block;
+    width: 84px;
+    height: 96px;
+    cursor: pointer;
+}
+
+#s-circle
+{
+    position: relative;
+    top: -8px;
+    left: 0;
+    width: 43px;
+    height: 43px;
+    margin-top: 0;
+    border-width: 15px;
+    border: 15px solid #8BFCB3;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: 0.5s ease all;
+}
+
+button span
+{
+    position: absolute;
+    top: 68px;
+    left: 43px;
+    display: block;
+    width: 45px;
+    height: 15px;
+    background-color: transparent;
+    border-radius: 10px;
+    transform: rotateZ(52deg);
+    transition: 0.5s ease all;
+}
+
+button span:before, button span:after
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 45px;
+    height: 15px;
+    background-color: #8BFCB3;
+    border-radius: 10px;
+    transform: rotateZ(0);
+    transition: 0.5s ease all;
+}
+
+#s-cover:hover #s-circle
+{
+    top: -1px;
+    width: 67px;
+    height: 15px;
+    border-width: 0;
+    background-color: #8BFCB3;
+    border-radius: 20px;
+}
+
+#s-cover:hover span
+{
+    top: 50%;
+    left: 56px;
+    width: 25px;
+    margin-top: -9px;
+    transform: rotateZ(0);
+}
+
+#s-cover:hover button span:before
+{
+    bottom: 11px;
+    transform: rotateZ(52deg);
+}
+
+#s-cover:hover button span:after
+{
+    bottom: -11px;
+    transform: rotateZ(-52deg);
+}
+#s-cover:hover button span:before, #s-cover:hover button span:after
+{
+    right: -6px;
+    width: 40px;
+    background-color: #8BFCB3;
+}
+
+
+
+
+
+
 
 
 
