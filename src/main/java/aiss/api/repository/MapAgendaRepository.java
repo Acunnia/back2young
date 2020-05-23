@@ -1,5 +1,6 @@
 package aiss.api.repository;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -146,13 +147,14 @@ public class MapAgendaRepository {
 	public void deleteContacto(String idContacto, String idAgenda) {
 		Agenda a = getAgenda(idAgenda);
 		List<Contacto> laux = a.getlContactos();
+		List<Contacto> lnew = new ArrayList<Contacto>();
 		for (int i = 0; i < laux.size(); i++) {
-			if (laux.get(i).getId() == idContacto) {
-				laux.remove(i);
-				a.setlContactos(laux);
+			if (laux.get(i).getId() != idContacto) {
+				lnew.add(laux.get(i));
 			}
 		}
-		agendaMap.put(idAgenda, a);
+		agendaMap.get(idAgenda).setlContactos(lnew);
+		
 	}
 	
 	/* Actualizar */
