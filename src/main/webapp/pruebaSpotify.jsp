@@ -30,7 +30,10 @@
                     </ul>
             </ul>
         </nav>
-
+        
+  
+<p>Aquí tienes las 5 canciones mas populares del año que has seleccionado</p>
+<p class="hola">Pasa el raton y pulsa sobre la imagen para obtener mas información sobre ella</p>
 <table style="width:100%">
 
 	<c:forEach items="${tracks}" var="track">
