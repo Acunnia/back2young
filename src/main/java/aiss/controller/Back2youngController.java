@@ -2,6 +2,7 @@ package aiss.controller;
 
 
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -36,7 +37,7 @@ public class Back2youngController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String songName = request.getParameter("songName");
+		String songName = URLEncoder.encode(request.getParameter("songName"), "UTF-8");
 		String accessToken = (String) request.getSession().getAttribute("Spotify-token");
 		RequestDispatcher rd = null;
 
@@ -52,7 +53,7 @@ public class Back2youngController extends HttpServlet {
 				request.setAttribute("trackSpotifyId", spotifyResultsName.getTracks().getItems().get(0).getId());
 				
 				YoutubeResource youtube = new YoutubeResource();
-				VideoMusicSearch videoResults = youtube.getVideo(spotifyResultsName.getTracks().getItems().get(0).getName() + 
+				VideoMusicSearch videoResults = youtube.getVideo(spotifyResultsName.getTracks().getItems().get(0).getName() +
 						spotifyResultsName.getTracks().getItems().get(0).getArtists().get(0).getName());
 				request.setAttribute("videoSong", videoResults.getItems().get(0).getId().getVideoId());
 				
