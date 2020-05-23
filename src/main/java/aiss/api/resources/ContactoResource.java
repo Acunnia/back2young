@@ -98,7 +98,7 @@ public class ContactoResource {
 	@POST
 	@Consumes("application/json")
 	@Produces("application/json")
-	public Response addSong(@Context UriInfo uriInfo, Contacto c) {
+	public Response addContacto(@Context UriInfo uriInfo, Contacto c) {
 		
 		if(c.getName() == null || "".equals(c.getName())) {
 			throw new BadRequestException("El nombre no puede ser nulo");
@@ -115,7 +115,7 @@ public class ContactoResource {
 	
 	@PUT
 	@Consumes("application/json")
-	public Response updateSong(Contacto c) {
+	public Response updateContacto(Contacto c) {
 		
 		Contacto cAux = repository.getContacto(c.getId());
 		if (cAux == null) {
@@ -143,7 +143,7 @@ public class ContactoResource {
 	
 	@DELETE
 	@Path("/{id}")
-	public Response removeSong(@PathParam("id") String constactoId) {
+	public Response removeContacto(@PathParam("id") String constactoId) {
 		Contacto eliminado = repository.getContacto(constactoId);;
 		if (eliminado == null) {
 			throw new NotFoundException("El contacto con id " + constactoId + " no pudo ser "

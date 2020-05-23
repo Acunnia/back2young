@@ -132,6 +132,19 @@ public class AgendaResource {
 		return Response.noContent().build();
 	}
 	
+	@GET
+	@Path("/{id}")
+	public Agenda getAgenda(@PathParam("id") String agendaId) {
+		Agenda a = repository.getAgenda(agendaId);;
+		
+		if(a == null) {
+			throw new NotFoundException("La agenda con id " + agendaId + ""
+					+ "no se ha encontrado");
+		}
+		
+		return a;
+	}
+	
 	@POST
 	@Path("/{agendaId}/{contactoId}")
 	@Produces("application/json")
