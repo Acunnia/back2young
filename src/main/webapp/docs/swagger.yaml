@@ -1,0 +1,357 @@
+swagger: '2.0'
+info:
+  description: API para administrar una agenda
+  version: 1.0.0
+  title: Administracion de Agenda
+  # put the contact info for your development or API team
+  contact:
+    email: juanma101099@gmail.com
+
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+
+schemes: 
+- http
+host: localhost:8090
+basePath: /api
+
+
+
+# tags are used for organizing operations
+tags:
+- name: contacto
+  description: llamadas relacionadas con Contacto
+- name: agenda
+  description: llamadas relacionadas con  Agenda
+
+
+paths:
+  /contactos:
+    get:
+      tags:
+      - contacto
+      summary: Get contactos
+      operationId: getAllContactos
+      description:
+        hacer una llamada al repo que de todos los contactos
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: nombre del contacto
+        required: false
+        type: string
+      - in: query
+        name: order
+        description: orden para filtrar
+        required: false
+        type: string
+      responses:
+        200:
+          description: search results matching criteria
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Contacto'
+        400:
+          description: bad input parameter
+    post:
+      tags:
+      - contacto
+      summary: Crea un contacto
+      operationId: addContacto
+      description: crea un contacto
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: contacto
+        description: contacto para agregar
+        required: true
+        schema:
+          $ref: '#/definitions/Contacto'
+      responses:
+        201:
+          description: contacto agregado
+        400:
+          description: Bad request
+    put:
+      tags:
+      - contacto
+      summary: actualiza un contacto
+      operationId: updateContacto
+      description: actualiza un contacto
+      consumes:
+      - application/json
+      parameters:
+      - in: body
+        name: contacto
+        description: contacto para actualizar
+        required: true
+        schema:
+          $ref: '#/definitions/Contacto'
+      responses:
+        204:
+          description: contacto actualizado
+        400:
+          description: Bad request
+        404:
+          description: contacto sin encontrar
+  /contactos/{id}:
+    get:
+      tags:
+      - contacto
+      summary: obtener un contacto por id
+      operationId: getContacto
+      description: obtener un contacto por id
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: id
+        description: id del contacto
+        required: true
+        type: string
+      responses:
+        200:
+          description: Song matching id
+          schema:
+            $ref: '#/definitions/Contacto'
+        404:
+          description: Song not found
+    delete:
+      tags:
+      - contacto
+      summary: borrar contacto
+      operationId: removeContacto
+      description: borrar contacto
+      parameters:
+      - in: path
+        name: id
+        description: id del contacto
+        required: true
+        type: string
+      responses:
+        204:
+          description: Contacto eliminado
+        404:
+          description: No se encontro el contacto
+  
+  
+  /agendas:
+    get:
+      tags:
+      - agenda
+      summary: Get agendas
+      operationId: getAllAgendas
+      description:
+        hacer una llamada al repo que de todas las agendas
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: nombre de la agenda
+        required: false
+        type: string
+      - in: query
+        name: order
+        description: orden para filtrar
+        enum:
+          - name
+          - nameReverse
+          - creacion
+          - creacionReverse
+        required: false
+        type: string
+      responses:
+        200:
+          description: search results matching criteria
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Agenda'
+        400:
+          description: bad input parameter
+    post:
+      tags:
+      - agenda
+      summary: crear una agenda
+      operationId: addAgenda
+      description: crear una agenda
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: agenda
+        description: agenda que vas a añadir
+        schema:
+          $ref: '#/definitions/Agenda'
+      responses:
+        201:
+          description: Agenda creada
+          schema:
+            $ref: '#/definitions/Agenda'
+        400:
+          description: Bad request
+    put:
+      tags:
+      - agenda
+      summary: actualizar una agenda
+      operationId: updateAgenda
+      description: actualizar una agenda
+      consumes:
+      - application/json
+      parameters:
+      - in: body
+        name: agenda
+        description: agenda para actualizar
+        schema:
+          $ref: '#/definitions/Agenda'
+      responses:
+        204:
+          description: Agenda actualizada
+        400:
+          description: Bad request
+        404:
+          description: No se encontro la agenda
+  
+  /agendas/{id}:
+    get:
+      tags:
+      - agenda
+      summary: obtener una agenda por id
+      operationId: getAgenda
+      description: obtener una agenda por id
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: id
+        description: id de la agenda
+        required: true
+        type: string
+      responses:
+        200:
+          description: agenda que coincida con el id
+          schema:
+            $ref: '#/definitions/Agenda'
+        404:
+          description: Agenda sin encontrar
+    delete:
+      tags:
+      - agenda
+      summary: borrar agenda por id
+      operationId: removeAgenda
+      description: borrar agenda por id
+      parameters:
+      - in: path
+        name: id
+        description: id de la agenda
+        required: true
+        type: string
+      responses:
+        204:
+          description: Agenda borrada
+        404:
+          description: Agenda sin encontrar
+  
+  /agendas/{agendaId}/{contactoId}:
+    post:
+      tags:
+      - agenda
+      summary: Añadir cancion a la agenda
+      operationId: addContactoToAgenda
+      description: Añadir contacto a la agenda
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: agendaId
+        description: id de la agenda
+        required: true
+        type: string
+      - in: path
+        name: contactoId
+        description: id del contacto
+        required: true
+        type: string
+      responses:
+        201:
+          description: Contacto añadido
+          schema:
+            $ref: '#/definitions/Agenda'
+        400:
+          description: Bad request
+        404:
+          description: No se ha encontrado algun elemento
+    delete:
+      tags:
+      - agenda
+      summary: Borrar contacto de la agenda
+      operationId: removeContactoFromAgenda
+      description: Borrar contacto de la agenda
+      parameters:
+      - in: path
+        name: agendaId
+        description: id de la agenda
+        required: true
+        type: string
+      - in: path
+        name: contactoId
+        description: id del contacto
+        required: true
+        type: string
+      responses:
+        204:
+          description: Contacto borrado
+        404:
+          description: No se ha encontrado algun elemento
+  
+  
+definitions:
+  Contacto:
+    type: object
+    required:
+    - id
+    - name
+    - surname
+    - numero
+    - email
+    - address
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      surname:
+        type: string
+      email:
+        type: string
+        example: example@mail.com
+      numero:
+        type: string
+        example: 123456789
+      address:
+        type: string
+  Agenda:
+    type: object
+    required:
+    - id
+    - name
+    - lContactos
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      lContactos:
+        type: array
+        items:
+          $ref: '#/definitions/Contacto'
