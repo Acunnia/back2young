@@ -1,9 +1,4 @@
 /*******************BARRA NAVEGACIÓN*********************/
-*{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
 body{
 	background: #319B8F;
 }
@@ -28,7 +23,7 @@ a{
 	letter-spacing: 1px;
 }
 span {
-    font-family: 'GothamBook';
+    font-family: 'arial';
     letter-spacing: 1px;
     font-size: 14px;
     line-height: 20px;
@@ -62,7 +57,7 @@ header{
 .optionsBar span {
     color: #FFF;
     font-size: 11pt;
-    font-family: 'GothamBook';
+    font-family: 'arial';
     text-transform: uppercase;
     margin-left: 30px;
 }
@@ -94,7 +89,7 @@ nav a{
 	color: #FFF;
 	display: block;
 	font-size: 10pt;
-	font-family: 'GothamBook';
+	font-family: 'arial';
 	padding: 15px 30px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
@@ -145,18 +140,11 @@ nav li ul li:last-child{
 
 /************************ÍNDICE****************************************/
 #texto p{color: #FFF; margin:0; padding:100px 0 0 60px; font-size:16px; font-style:arial; line-height:1.6em; font-weight: 900;}
-#logo{position: relative;
-  animation-name: example;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;}
-  
- @keyframes example {
-  0%   {left:0px; top:0px;}
-  25%  {left:75%; top:0px;}
-  50%  {left:0px; top:0px;}
-  75%  {left:75%; top:0px;}
-  100% {left:0px; top:0px;}
+#logo{display:block;
+	margin-left:40%;
+	margin-top: 50px;
 }
+  
 
 
 /**************************ABOUT US***********************************/
@@ -178,23 +166,32 @@ nav li ul li:last-child{
 
 
 /*************************BUSCADOR**********************************************/
+   *{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    outline: none;
+}
+
+html, body{
+    height: 100%;
+    min-height: 100%;
+}
 
 
-.tb
-{
+
+.tb{
     display: table;
     width: 100%;
 }
 
-.td
-{
+.td{
     display: table-cell;
     vertical-align: middle;
 }
 
-input, button
-{
-    color: #0D6D2F;
+input, button{
+    color: #142b3b;
     font-family: arial;
     padding: 0;
     margin: 0;
@@ -202,48 +199,41 @@ input, button
     background-color: transparent;
 }
 
-#cover
-{
-	position:absolute;
-    top:325;
+#cover{
+    position: absolute;
+    top: 50%;
     left: 0;
     right: 0;
-    width: 530px;
-    height: 80px;
+    width: 550px;
     padding: 35px;
     margin: -83px auto 0 auto;
-    background-color: #18DF5E;
+    background-color: #319B8F;
     border-radius: 20px;
-    box-shadow: 0 10px 40px #0D6D2F, 0 0 0 20px #0D6D2F;
+    box-shadow: 0 10px 40px #142b3b, 0 0 0 20px #142b3b;
     transform: scale(0.6);
 }
 
-form
-{
+form{
     height: 96px;
 }
 
-input[type="text"]
-{
+input[type="text"]{
     width: 100%;
     height: 96px;
-    font-size: 40px;
+    font-size: 60px;
     line-height: 1;
 }
 
-input[type="text"]::placeholder
-{
-    color: #18DF5E;
+input[type="text"]::placeholder{
+    color: #142b3b;
 }
 
-#s-cover
-{
+#s-cover{
     width: 1px;
     padding-left: 35px;
 }
 
-button
-{
+button{
     position: relative;
     display: block;
     width: 84px;
@@ -251,61 +241,56 @@ button
     cursor: pointer;
 }
 
-#s-circle
-{
+#s-circle{
     position: relative;
-    top: -8px;
-    left: 0;
-    width: 43px;
-    height: 43px;
+    top: -2px;
+    left: 5px;
+    width: 50px;
+    height: 50px;
     margin-top: 0;
     border-width: 15px;
-    border: 15px solid #8BFCB3;
+    border: 15px solid #fff;
     background-color: transparent;
     border-radius: 50%;
     transition: 0.5s ease all;
 }
 
-button span
-{
+button span{
     position: absolute;
     top: 68px;
-    left: 43px;
+    left: 34px;
     display: block;
     width: 45px;
     height: 15px;
     background-color: transparent;
-    border-radius: 10px;
+    border-radius: 15px;
     transform: rotateZ(52deg);
     transition: 0.5s ease all;
 }
 
-button span:before, button span:after
-{
+button span:before, button span:after{
     content: '';
     position: absolute;
     bottom: 0;
     right: 0;
     width: 45px;
     height: 15px;
-    background-color: #8BFCB3;
+    background-color: #fff;
     border-radius: 10px;
     transform: rotateZ(0);
     transition: 0.5s ease all;
 }
 
-#s-cover:hover #s-circle
-{
+#s-cover:hover #s-circle{
     top: -1px;
     width: 67px;
     height: 15px;
     border-width: 0;
-    background-color: #8BFCB3;
+    background-color: #fff;
     border-radius: 20px;
 }
 
-#s-cover:hover span
-{
+#s-cover:hover span{
     top: 50%;
     left: 56px;
     width: 25px;
@@ -313,29 +298,57 @@ button span:before, button span:after
     transform: rotateZ(0);
 }
 
-#s-cover:hover button span:before
-{
+#s-cover:hover button span:before{
     bottom: 11px;
     transform: rotateZ(52deg);
 }
 
-#s-cover:hover button span:after
-{
+#s-cover:hover button span:after{
     bottom: -11px;
     transform: rotateZ(-52deg);
 }
-#s-cover:hover button span:before, #s-cover:hover button span:after
-{
+
+#s-cover:hover button span:before, #s-cover:hover button span:after{
     right: -6px;
     width: 40px;
-    background-color: #8BFCB3;
+    background-color: #fff;
 }
 
+/************************LISTADO APIS*******************************/
+.spotifyApi{
+	margin: 40px;
+	text-align: center;
+}
 
+.spotify{
+	witdh: 175px;
+    height: 175px;
+	
+}
 
+.youtubeApi{
+	margin: 45px;
+	text-align: center;
+	margin-bottom: 75px;
+}
 
+.youtube{
+	witdh: 260px;
+    height: 260px;	
+}
 
+.musixmatchApi{
+	margin: 30px;
+	text-align: center;
+}
 
+.musixmatch{
+	witdh: 110px;
+    height: 110px;
+	
+}
+
+/************************YT-SPOTY-MUSIXMATCH*******************************/
 
 
 

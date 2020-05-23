@@ -3,10 +3,13 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<link rel="stylesheet" href="styles/buscadorSpotify.css">
+<link rel="stylesheet" href="styles/salidaSpoty.css">
 <meta charset="ISO-8859-1">
 <title>Prueba Api Spotify</title>
 </head>
+<style>
+scrollbars {overflow:scroll; height:300px;}
+</style>
 <body id="spotify">
 
 <header>
@@ -31,9 +34,8 @@
             </ul>
         </nav>
         
-  
-<p>Aquí tienes las 5 canciones mas populares del año que has seleccionado</p>
-<p class="hola">Pasa el raton y pulsa sobre la imagen para obtener mas información sobre ella</p>
+ </header> 
+
 <table style="width:100%">
 
 	<c:forEach items="${tracks}" var="track">

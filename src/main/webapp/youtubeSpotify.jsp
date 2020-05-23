@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link rel="stylesheet" href="styles/youtubeSpotify.css">
+<link rel="stylesheet" href="styles/salidaSpoty.css">
 <title>Busqueda final</title>
 </head>
 <body>
