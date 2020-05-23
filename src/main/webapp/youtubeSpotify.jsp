@@ -8,6 +8,8 @@
 </head>
 <body>
 
+
+
 <iframe src="https://open.spotify.com/embed/track/${trackSpotifyId}" width="500" height="80" 
     			frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 

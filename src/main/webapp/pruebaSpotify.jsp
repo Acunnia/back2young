@@ -9,23 +9,44 @@
 </head>
 <body id="spotify">
 
+<header>
+		<div class="header">
+			<h1>Back2Young</h1>
+			<div class="optionsBar">
+                
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li class="principal">
+                    <a href="pruebaSpotify.html">Buscador</a>
+                </li>
+                <li class="principal">
+                    <a href="aboutus.html">About US</a>
+                    <ul>
+                        <li><a href="aboutus.html">Miembros</a></li>
+                        <li><a href="apis.html">Listado de APIS</a></li>
+                    </ul>
+            </ul>
+        </nav>
+
 <table style="width:100%">
-  	<tr>
-    	<th>Song</th>
-    	<th>More info</th>
-  	</tr>
+
 	<c:forEach items="${tracks}" var="track">
 		<tr>
     		<td>
-    			<iframe src="https://open.spotify.com/embed/track/${track.id}" width="500" height="80" 
-    			frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-    		</td>
-    		<td>
+    		<div class="container">
+  				<div class="div-img" >
 				<form action="Back2youngController" method="post" accept-charset="UTF-8">
 					<input type="hidden" name="songName" value="${track.name}"/>
 					<input type="hidden" name="artistName" value="${track.artists[0].name}"/>
-					<button type="submit">${track.name} - ${track.artists[0].name}</button>
-				</form>
+					<button type="submit"><img class="img" src="${track.album.images[0].url}" title="${track.name}" alt="Foto10"></button>
+   					<div class="text" >${track.name} - ${track.artists[0].name}</div>
+   					</form>
+   				 		</div>
+  					</div>
+				
 			</td>
   		</tr>
 	</c:forEach>
