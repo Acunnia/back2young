@@ -10,10 +10,9 @@
 <style>
 scrollbars {overflow:scroll; height:300px;}
 </style>
-<body id="spotify">
 
-<header>
-		<div class="header">
+<header >
+		<div class="header" >
 			<h1>Back2Young</h1>
 			<div class="optionsBar">
                 
@@ -35,6 +34,7 @@ scrollbars {overflow:scroll; height:300px;}
         </nav>
         
  </header> 
+<body id="spotify">
 
 <table style="width:100%">
 

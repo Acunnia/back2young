@@ -1,38 +1,42 @@
+@import url(../fonts/GothamBook.css);
+@import url(../fonts/GothamBold.css);
 *{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
-
-.pagina::-webkit-scrollbar {
-	width: 7px;
-}
-
-.pagina::-webkit-scrollbar-thumb {
-	background: #ff9d00;
-	border-radius: 5px;
-}
-
 body{
-	margin-top:300px;
 	background: #319B8F;
 }
-
-
-a{
-	text-decoration: none;
+h1{
+    font-family: 'arial';
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+h1{
+	font-size: 26px;
 }
 
+p{
+	font-family: 'arial';
+	letter-spacing: 2px;
+	font-size: 14px;
+	line-height: 20px;
+}
+a{
+	text-decoration: none;
+	font-family: arial;
+	letter-spacing: 1px;
+}
+span {
+    font-family: 'GothamBook';
+    letter-spacing: 1px;
+    font-size: 14px;
+    line-height: 20px;
+}
 header{
 	position: fixed;
 	width: 100%;
-}
-
-h1{
-	font-size: 26px;
-	font-family: 'arial';
-    font-weight: bold;
-    letter-spacing: 1px;
 }
 .header{
 	color: #FFF;
@@ -64,10 +68,6 @@ h1{
     margin-left: 30px;
 }
 
-.close{
-	width: 25px;
-    height: 25px;
-}
 .optionsBar a {
     display: -webkit-flex;
     display: -moz-flex;
@@ -125,6 +125,10 @@ nav li ul a{
 	position: relative;
 	padding: 10px 30px;
 	border-right: initial;
+}
+nav li:hover{
+	/*background: #2c9595;*/
+	background: #319B8F;
 }
 nav li ul a:hover{
 	/*background: #2c9595;*/

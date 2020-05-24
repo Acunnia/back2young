@@ -1,10 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link rel="stylesheet" href="styles/salidaSpoty.css">
+<title>Insert title here</title>
+<link rel="stylesheet" href="styles/youtubeSpotify.css">
 <title>Busqueda final</title>
 </head>
 <body>
@@ -12,7 +10,7 @@
 <div class="header">
 			<h1>Back2Young</h1>
 			<div class="optionsBar">
-                
+
             </div>
         </div>
         <nav>
@@ -34,6 +32,7 @@
 <p class="lyrics">${requestScope.lyricsSong}</p>
 </div>
 
+
 <div class="divSpotify">
 <iframe class="iframeSpotify" src="https://open.spotify.com/embed/track/${trackSpotifyId}"  
     			frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
@@ -44,8 +43,6 @@
   src="http://www.youtube.com/embed/${requestScope.videoSong}?enablejsapi=1" 
   frameborder="0"></iframe>
 </div>
-
-
 
 
 </body>
