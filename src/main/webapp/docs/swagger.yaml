@@ -13,7 +13,7 @@ info:
 
 schemes: 
 - http
-host: localhost:8090
+host: back2tyoung.appspot.com
 basePath: /api
 
 
