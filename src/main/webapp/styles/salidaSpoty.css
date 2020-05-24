@@ -37,6 +37,7 @@ span {
 header{
 	position: fixed;
 	width: 100%;
+	z-index: 2;
 }
 .header{
 	color: #FFF;
@@ -191,7 +192,7 @@ nav li ul li:last-child{
   -moz-transition: all 500ms ease-in-out;
   -ms-transition: all 500ms ease-in-out;
   -o-transition: all 500ms ease-in-out;
-  z-index: 1;
+  z-index: 0;
 }
 
 .div-img:hover .img {
@@ -215,7 +216,7 @@ nav li ul li:last-child{
   width: 100%;
   text-align: center;
   font-family: sans-serif;
-  font-size: 45px;
+  font-size: 35px;
 }
 
 button{

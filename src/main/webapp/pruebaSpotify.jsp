@@ -11,7 +11,7 @@
 scrollbars {overflow:scroll; height:300px;}
 </style>
 
-<header >
+<header>
 		<div class="header" >
 			<h1>Back2Young</h1>
 			<div class="optionsBar">

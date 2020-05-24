@@ -53,7 +53,7 @@ public class Back2youngController extends HttpServlet {
 				request.setAttribute("trackSpotifyId", spotifyResultsName.getTracks().getItems().get(0).getId());
 				
 				YoutubeResource youtube = new YoutubeResource();
-				VideoMusicSearch videoResults = youtube.getVideo(spotifyResultsName.getTracks().getItems().get(0).getName() +
+				VideoMusicSearch videoResults = youtube.getVideo(spotifyResultsName.getTracks().getItems().get(0).getName() + " " +
 						spotifyResultsName.getTracks().getItems().get(0).getArtists().get(0).getName());
 				request.setAttribute("videoSong", videoResults.getItems().get(0).getId().getVideoId());
 				
