@@ -96,7 +96,7 @@ public class AgendaResource {
 
 		repository.addAgenda(a);;
 
-		UriBuilder ub = uriInfo.getAbsolutePathBuilder().path(this.getClass(), "get");
+		UriBuilder ub = uriInfo.getAbsolutePathBuilder().path(this.getClass(), "getAgenda");
 		URI uri = ub.build(a.getId());
 		ResponseBuilder resp = Response.created(uri);
 		resp.entity(a);			

@@ -10,7 +10,7 @@
     "Spotify": {
         "tokenUrl": "https://accounts.spotify.com/api/token",
         "clientId": "db741bc952784b499b08bd0a236d4829",
-        "clientSecret": "9ef72521610646cdbd4d9cf10c16e106",
+        "clientSecret": "a1102865960e4c379762a2cdb840872c",
         "authorizationFormUrl": "https://accounts.spotify.com/authorize",
         "scopes": ["playlist-read-collaborative", "playlist-read-private"]
     },
