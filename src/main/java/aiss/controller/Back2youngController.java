@@ -15,9 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 import aiss.model.musixmatch.Lyrics;
 import aiss.model.resources.MusixMatchResource;
 import aiss.model.resources.SpotifyResource;
-import aiss.model.resources.YoutubeResource;
+import aiss.model.spotify.Item;
 import aiss.model.spotify.SearchTracks;
-import aiss.model.youtube.VideoMusicSearch;
 
 public class Back2youngController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -47,19 +46,25 @@ public class Back2youngController extends HttpServlet {
 			log.log(Level.FINE, "Searching results of " + songName);
 			SpotifyResource spotify = new SpotifyResource(accessToken);
 			SearchTracks spotifyResultsName = spotify.getTrackSearchName(songName);
+			
 
 			if (spotifyResultsName != null) {
-				rd = request.getRequestDispatcher("/youtubeSpotify.jsp");
-				request.setAttribute("trackSpotifyId", spotifyResultsName.getTracks().getItems().get(0).getId());
+				Item findedTrack = spotifyResultsName.getTracks().getItems().get(0);
 				
-				YoutubeResource youtube = new YoutubeResource();
-				VideoMusicSearch videoResults = youtube.getVideo(spotifyResultsName.getTracks().getItems().get(0).getName() + " " +
-						spotifyResultsName.getTracks().getItems().get(0).getArtists().get(0).getName());
-				request.setAttribute("videoSong", videoResults.getItems().get(0).getId().getVideoId());
+				rd = request.getRequestDispatcher("/youtubeSpotify.jsp");
+				request.setAttribute("songName", songName.replace("%2B", "+"));
+				request.setAttribute("trackSpotifyId", findedTrack.getId());
+				Boolean fav = spotify.checkFavSong(findedTrack.getId());
+				request.setAttribute("faved", fav);
+				System.out.println("-----------------------------------" + fav);
+				
+				
+//				YoutubeResource youtube = new YoutubeResource();
+//				VideoMusicSearch videoResults = youtube.getVideo(findedTrack.getName() + " " +findedTrack.getName());
+//				request.setAttribute("videoSong", videoResults.getItems().get(0).getId().getVideoId());
 				
 				MusixMatchResource musixmatch = new MusixMatchResource();
-				Lyrics lyrics = musixmatch.getLyricsResource(spotifyResultsName.getTracks().getItems().get(0).getName(), 
-						spotifyResultsName.getTracks().getItems().get(0).getArtists().get(0).getName());
+				Lyrics lyrics = musixmatch.getLyricsResource(findedTrack.getName(), findedTrack.getArtists().get(0).getName());
 				request.setAttribute("lyricsSong", lyrics.getLyrics());
 				
 				

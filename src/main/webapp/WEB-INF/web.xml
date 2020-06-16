@@ -52,6 +52,25 @@
 		<url-pattern>/SpotifyController</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>DislikeSpotify</servlet-name>
+		<servlet-class>aiss.controller.DislikeSpotifyController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DislikeSpotify</servlet-name>
+		<url-pattern>/DislikeSpotify</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>LikeSpotify</servlet-name>
+		<servlet-class>aiss.controller.LikeSpotifyController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LikeSpotify</servlet-name>
+		<url-pattern>/LikeSpotify</url-pattern>
+	</servlet-mapping>
+	
+	
 	<!-- Back2young -->
 
 	<servlet>

@@ -10,9 +10,9 @@
     "Spotify": {
         "tokenUrl": "https://accounts.spotify.com/api/token",
         "clientId": "db741bc952784b499b08bd0a236d4829",
-        "clientSecret": "a1102865960e4c379762a2cdb840872c",
+        "clientSecret": "4dd0cb86c98e408988e6b7cb7d2cadad",
         "authorizationFormUrl": "https://accounts.spotify.com/authorize",
-        "scopes": ["playlist-read-collaborative", "playlist-read-private"]
+        "scopes": ["playlist-read-collaborative", "playlist-read-private", "user-library-modify", "user-library-read"]
     },
     
     "MusixMatch": {
