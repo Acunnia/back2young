@@ -27,7 +27,4 @@ public class SpotifyTest {
 		SearchTracks spotifyResults = acceso.getTrackSearchName(songName);
 		assertNotNull("The search of track is not null", spotifyResults.getTracks().getItems().get(0));
 	}
-	
-	
-	
 }
