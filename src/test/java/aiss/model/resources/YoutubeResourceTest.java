@@ -2,6 +2,7 @@ package aiss.model.resources;
 
 import org.junit.Test;
 
+
 import aiss.model.youtube.VideoMusicSearch;
 import static org.junit.Assert.*;
 import java.io.UnsupportedEncodingException;

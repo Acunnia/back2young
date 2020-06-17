@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title></title>
 <link rel="stylesheet" href="styles/youtubeSpotify.css">
 <title>Busqueda final</title>
 </head>
@@ -44,7 +44,7 @@
     	<form action="DislikeSpotify" method="post" accept-charset="UTF-8">
     		<input type="hidden" name="songName" value="${songName}"/> 
     		<input type="hidden" name="trackId" value="${trackSpotifyId}"/> 
-        	<button type="submit"><img class="img" src="https://cdn.discordapp.com/attachments/722461236251328532/722493580651790478/corazon.png" title="${track.name}" alt="LIKE FOTO"></button>
+        	<button type="submit"><img class="img" width=40px height=40px src="https://cdn.discordapp.com/attachments/722461236251328532/722493580651790478/corazon.png" title="${track.name}" alt="LIKE FOTO"></button>
         </form>
         <br />
     </c:when>    
@@ -52,7 +52,7 @@
         <form action="LikeSpotify" method="post" accept-charset="UTF-8">
         	<input type="hidden" name="songName" value="${songName}"/> 
             <input type="hidden" name="trackId" value="${trackSpotifyId}"/> 
-            <button type="submit"><img class="img" src="https://cdn.discordapp.com/attachments/722461236251328532/722493576826585098/corazon_1.png" title="${track.name}" alt="DISLIKE FOTO"></button>
+            <button type="submit"><img class="img" width=40px height=40px src="https://cdn.discordapp.com/attachments/722461236251328532/722493576826585098/corazon_1.png" title="${track.name}" alt="DISLIKE FOTO"></button>
         </form>
         <br />
     </c:otherwise>

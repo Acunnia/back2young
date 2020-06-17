@@ -15,8 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 import aiss.model.musixmatch.Lyrics;
 import aiss.model.resources.MusixMatchResource;
 import aiss.model.resources.SpotifyResource;
+import aiss.model.resources.YoutubeResource;
 import aiss.model.spotify.Item;
 import aiss.model.spotify.SearchTracks;
+import aiss.model.youtube.VideoMusicSearch;
 
 public class Back2youngController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -59,9 +61,9 @@ public class Back2youngController extends HttpServlet {
 				System.out.println("-----------------------------------" + fav);
 				
 				
-//				YoutubeResource youtube = new YoutubeResource();
-//				VideoMusicSearch videoResults = youtube.getVideo(findedTrack.getName() + " " +findedTrack.getName());
-//				request.setAttribute("videoSong", videoResults.getItems().get(0).getId().getVideoId());
+				YoutubeResource youtube = new YoutubeResource();
+				VideoMusicSearch videoResults = youtube.getVideo(findedTrack.getName() + " " +findedTrack.getName());
+				request.setAttribute("videoSong", videoResults.getItems().get(0).getId().getVideoId());
 				
 				MusixMatchResource musixmatch = new MusixMatchResource();
 				Lyrics lyrics = musixmatch.getLyricsResource(findedTrack.getName(), findedTrack.getArtists().get(0).getName());

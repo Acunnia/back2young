@@ -4,6 +4,7 @@ package aiss.model.resources;
 
 import static org.junit.Assert.*;
 
+
 import java.io.UnsupportedEncodingException;
 
 import org.junit.Test;
