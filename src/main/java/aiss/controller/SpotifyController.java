@@ -38,7 +38,7 @@ public class SpotifyController extends HttpServlet {
 		if (accessToken != null && !"".equals(accessToken)) {
 
 			// Search for tracks in Spotify
-			log.log(Level.FINE, "Searching for Spotify results of " + query);
+			log.log(Level.FINE, "Searching for Spotify results of " + query + "with token: " + accessToken);
 			SpotifyResource spotify = new SpotifyResource(accessToken);
 			SearchTracks spotifyResults = spotify.getTopSearch(query);
 

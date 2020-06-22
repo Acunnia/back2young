@@ -1,17 +1,19 @@
 package aiss.model.resources;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+
 import java.io.UnsupportedEncodingException;
-import aiss.model.spotify.*;
+
+import org.junit.Test;
+
+import aiss.model.spotify.SearchTracks;
 
 
 public class SpotifyTest {
-
+	String token = "BQC9Ju73HsGX13fqkYgyC5c9QnTkMVFh8oYfErqz9jk1Tb1Ln7i3ddnP_PVc52OwirtfKr5Mfgp55JqbgVQT5HJxIMfXEYKrvhUblyDRdY454XxoFmhOfGLP2verIbjqYXnlQsngGKeYgJYML5_6F3sHOCCcafwW8ktYFeUOQMg98Yz6di3ynKm0U2mPOzBybXxnzQ";
 	
 	@Test
 	public void testGetCancion() throws UnsupportedEncodingException {
-		String token = "BQAnR8ablZAFBKCFbJflcURnErxj0eQrMJVMfOHJok9kQd3D__bhOByowk1IoWpF5BDY1g1ktF_SWmuE2dwOLGSkLmUquOxQJuMZJO15bBoWt51OZ7rDrCF6f1atBjVRPAgdZfUd-y4seTmGUNut87x6ylGvnYprWrPE3IqSCgCzqCD-vVRy0xBRaSFU_UT-ezqA9MhhQa7_t0d50ZWgW-BkV7w43_7s41ID13YvPp-7Ppmb5GP6J9c9t9zsM31lkXGBC4nnQqdf";
 		String songName = "Il Tempo";
 		SpotifyResource acceso = new SpotifyResource(token);
 		SearchTracks spotifyResults = acceso.getTrackSearchName(songName);
@@ -21,10 +23,9 @@ public class SpotifyTest {
 	
 	@Test (expected = NullPointerException.class)
 	public void testGetCancionNull() throws UnsupportedEncodingException {
-		String token = "BQAnR8ablZAFBKCFbJflcURnErxj0eQrMJVMfOHJok9kQd3D__bhOByowk1IoWpF5BDY1g1ktF_SWmuE2dwOLGSkLmUquOxQJuMZJO15bBoWt51OZ7rDrCF6f1atBjVRPAgdZfUd";
-		String songName = null;
+		String songName = " ";
 		SpotifyResource acceso = new SpotifyResource(token);
-		SearchTracks spotifyResults = acceso.getTrackSearchName(songName);
-		assertNotNull("The search of track is not null", spotifyResults.getTracks().getItems().get(0));
+		SearchTracks searchTacks = acceso.getTrackSearchName(songName);
+		searchTacks.getTracks().getNext().length();
 	}
 }

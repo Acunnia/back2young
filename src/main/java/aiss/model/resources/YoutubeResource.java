@@ -12,7 +12,7 @@ public class YoutubeResource {
 	private String canionSearchUri = "https://www.googleapis.com/youtube/v3/search?type=video&videoCategory.id&maxResults=1"
 			+ "&order=viewCount&part=snippet&q=";
 	
-	private static final String _YT_API_KEY = "AIzaSyCn2aknvGqUeF5OQBZr-xfHdCGhLUbwOKE";
+	private static final String _YT_API_KEY = "AIzaSyCh4y-LP3qc-k50H4xXPkCnWNbbKVw3kV8";
 	
 	public VideoMusicSearch getVideo(String query) throws UnsupportedEncodingException {
 		String queryFormatted = URLEncoder.encode(query, "UTF-8");

@@ -58,9 +58,7 @@ public class Back2youngController extends HttpServlet {
 				request.setAttribute("trackSpotifyId", findedTrack.getId());
 				Boolean fav = spotify.checkFavSong(findedTrack.getId());
 				request.setAttribute("faved", fav);
-				System.out.println("-----------------------------------" + fav);
-				
-				
+						
 				YoutubeResource youtube = new YoutubeResource();
 				VideoMusicSearch videoResults = youtube.getVideo(findedTrack.getName() + " " +findedTrack.getName());
 				request.setAttribute("videoSong", videoResults.getItems().get(0).getId().getVideoId());
